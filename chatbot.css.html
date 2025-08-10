@@ -1,0 +1,150 @@
+(()=> {
+  const WHATSAPP_NUMBER = "5562994067881";
+  const SERVICOS = [
+    "Abertura & Regularização",
+    "Contábil & Demonstrações",
+    "Fiscal & Tributário",
+    "Folha & DP",
+    "Planejamento Tributário",
+    "Consultoria MEI"
+  ];
+
+  // FAB + container
+  const fab = document.createElement('button');
+  fab.className = 'cb-fab';
+  fab.id = 'cbOpen';
+  fab.setAttribute('aria-label','Abrir atendimento');
+  fab.innerHTML = `
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#e8f0fe" stroke="#1B4B7A"/>
+      <circle cx="24" cy="28" r="7" fill="#fff" stroke="#0A2540"/>
+      <circle cx="40" cy="28" r="7" fill="#fff" stroke="#0A2540"/>
+      <rect x="24" y="27" width="16" height="2" fill="#0A2540"/>
+      <circle cx="24" cy="28" r="3" fill="#0A2540"/>
+      <circle cx="40" cy="28" r="3" fill="#0A2540"/>
+      <path d="M22 42c3 3 17 3 20 0" stroke="#0A2540" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M18 20c6-7 22-7 28 0" stroke="#1B4B7A" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>`;
+  document.body.appendChild(fab);
+
+  const box = document.createElement('div');
+  box.className = 'cb-box'; box.id = 'cbBox';
+  box.setAttribute('role','dialog'); box.setAttribute('aria-modal','true');
+  box.innerHTML = `
+    <div class="cb-head">
+      <div class="cb-title"><strong id="cbTitle">Atendimento 062</strong><span class="cb-sub">Olá! Posso ajudar?</span></div>
+      <button class="cb-close" id="cbClose" aria-label="Fechar">×</button>
+    </div>
+    <div class="cb-body" id="cbBody" tabindex="0"></div>
+    <div class="cb-foot" id="cbFoot"></div>`;
+  document.body.appendChild(box);
+
+  const $ = (s, p=document)=>p.querySelector(s);
+  const body = $('#cbBody'), foot = $('#cbFoot'),
+        openBtn = $('#cbOpen'), closeBtn = $('#cbClose');
+
+  const state = { servico:"", nome:"", email:"", telefone:"", cidade:"" };
+
+  function playPing(){
+    try{
+      const ctx = new (window.AudioContext||window.webkitAudioContext)();
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.type = "sine"; o.frequency.value = 880;
+      o.connect(g); g.connect(ctx.destination);
+      g.gain.setValueAtTime(0.0001, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.18);
+      o.start(); o.stop(ctx.currentTime + 0.2);
+    }catch(e){}
+  }
+  const addBot = (html) => { const n=document.createElement('div'); n.className='cb-msg cb-bot'; n.innerHTML=html; body.appendChild(n); body.scrollTop=body.scrollHeight; };
+  const addUser = (text)=> { const n=document.createElement('div'); n.className='cb-msg cb-user'; n.textContent=text; body.appendChild(n); body.scrollTop=body.scrollHeight; };
+  const clearFoot = ()=> foot.innerHTML='';
+
+  function stepServicos(greeting=true){
+    if (greeting){ addBot("Olá, tudo bem? 👋<br><b>Como posso ajudar?</b><br><small>Clique em um serviço abaixo para começar:</small>"); }
+    else { addBot("<small>Selecione um serviço:</small>"); }
+    const ops = document.createElement('div'); ops.className='cb-ops';
+    SERVICOS.forEach(s=>{
+      const b=document.createElement('button'); b.textContent=s;
+      b.onclick=()=>{ state.servico=s; addUser(s); stepNome(); };
+      ops.appendChild(b);
+    });
+    body.appendChild(ops); body.scrollTop=body.scrollHeight;
+  }
+  function stepNome(){
+    clearFoot(); addBot("Qual é o seu <b>nome completo</b>?");
+    const w=document.createElement('div'); w.className='cb-field';
+    w.innerHTML = `
+      <input id="cbNome" placeholder="Seu nome completo">
+      <div class="cb-actions"><button class="cb-btn secondary" id="back0">Voltar</button><button class="cb-btn primary" id="next0">Continuar</button></div>`;
+    foot.appendChild(w); $('#cbNome').focus();
+    $('#back0').onclick=()=>{ body.innerHTML=''; stepServicos(false); };
+    $('#next0').onclick=()=>{ const v=$('#cbNome').value.trim(); if(v.length<3){$('#cbNome').focus(); return;} state.nome=v; addUser(v); stepEmail(); };
+  }
+  function stepEmail(){
+    clearFoot(); addBot("Obrigado! Informe seu <b>e‑mail</b>.");
+    const w=document.createElement('div'); w.className='cb-field';
+    w.innerHTML = `
+      <input id="cbEmail" type="email" placeholder="voce@empresa.com">
+      <div class="cb-actions"><button class="cb-btn secondary" id="back1">Voltar</button><button class="cb-btn primary" id="next1">Continuar</button></div>`;
+    foot.appendChild(w); $('#cbEmail').focus();
+    $('#back1').onclick=()=> stepNome();
+    $('#next1').onclick=()=>{ const v=$('#cbEmail').value.trim(); const ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); if(!ok){$('#cbEmail').focus(); return;} state.email=v; addUser(v); stepTelefone(); };
+  }
+  function stepTelefone(){
+    clearFoot(); addBot("Qual é o seu <b>telefone (WhatsApp)</b>?");
+    const w=document.createElement('div'); w.className='cb-field';
+    w.innerHTML = `
+      <input id="cbTel" inputmode="tel" placeholder="(62) 9 9999-9999">
+      <div class="cb-actions"><button class="cb-btn secondary" id="back2">Voltar</button><button class="cb-btn primary" id="next2">Continuar</button></div>`;
+    foot.appendChild(w); $('#cbTel').focus();
+    $('#back2').onclick=()=> stepEmail();
+    $('#next2').onclick=()=>{ const v=$('#cbTel').value.trim(); if(v.length<8){$('#cbTel').focus(); return;} state.telefone=v; addUser(v); stepCidade(); };
+  }
+  function stepCidade(){
+    clearFoot(); addBot("De qual <b>cidade/região</b> você é?");
+    const w=document.createElement('div'); w.className='cb-field';
+    w.innerHTML = `
+      <input id="cbCidade" placeholder="Ex.: Senador Canedo / Goiânia">
+      <label class="cb-consent"><input type="checkbox" id="cbLGPD"> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+      <div class="cb-actions"><button class="cb-btn secondary" id="back3">Voltar</button><button class="cb-btn primary" id="send">Enviar pelo WhatsApp</button></div>`;
+    foot.appendChild(w); $('#cbCidade').focus();
+    $('#back3').onclick=()=> stepTelefone();
+    $('#send').onclick=()=>{
+      const v=$('#cbCidade').value.trim();
+      if(!v){$('#cbCidade').focus(); return;}
+      if(!$('#cbLGPD').checked){ alert('Marque o consentimento LGPD para prosseguir.'); return; }
+      state.cidade=v; addUser(v); sendWhatsApp();
+    };
+  }
+  function sendWhatsApp(){
+    const msg =
+`Olá! Tenho interesse em: ${state.servico}.
+Nome: ${state.nome}
+E-mail: ${state.email}
+Telefone: ${state.telefone}
+Cidade/Região: ${state.cidade}
+
+(Enviado pelo chatbot do site)`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    addBot("Perfeito! Vou abrir o WhatsApp com suas informações. ✅");
+    window.open(url,'_blank');
+  }
+  function resetChat(){ body.innerHTML=''; foot.innerHTML=''; stepServicos(true); }
+
+  // abrir/fechar
+  openBtn.addEventListener('click', ()=>{
+    box.style.display='block'; box.classList.add('show');
+    if(!body.children.length) resetChat();
+    setTimeout(()=> body.focus(), 80);
+  });
+  closeBtn.addEventListener('click', ()=> { box.style.display='none'; openBtn.classList.add('attn'); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && box.style.display==='block') box.style.display='none'; });
+
+  // auto abrir
+  window.addEventListener('load', ()=>{
+    openBtn.classList.add('attn');
+    setTimeout(()=>{ openBtn.classList.remove('attn'); box.style.display='block'; box.classList.add('show'); resetChat(); playPing(); }, 1200);
+  });
+})();
