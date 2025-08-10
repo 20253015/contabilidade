@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>062 Contabilidade — Contabilidade consultiva em Senador Canedo</title>
+  <meta name="description" content="Contabilidade estratégica em Senador Canedo. Abertura de empresas, fiscal, DP, planejamento tributário e consultoria. Fale no WhatsApp e receba uma análise gratuita." />
+  <meta name="theme-color" content="#0A2540" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* =====================
+       Design Tokens
+    ====================== */
+    :root{
+      --brand:#0a402f;           /* azul profundo */
+      --brand-600:#1b7a59;       /* azul petróleo */
+      --accent:#49A6E9;          /* acento */
+      --bg:#F5F7FA;              /* fundo claro */
+      --text:#0F172A;            /* texto escuro */
+      --muted:#64748B;           /* apoio */
+      --card: rgba(255,255,255,0.72);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(2, 14, 34, 0.12);
+      --shadow-soft: 0 8px 18px rgba(2, 14, 34, 0.10);
+      --blur: saturate(1.2) blur(6px);
+      --focus: 0 0 0 15px rgba(38, 169, 151, 0.45);
+      --link:#2c3b59;
+      --link-active:#0A2540;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220;
+        --text:#e6edf6;
+        --card: rgba(15, 23, 42, 0.56);
+        --muted:#9AA8BC;
+        --link:#cbd5e1;
+        --link-active:#fff;
+      }
+    }
+    .dark{
+      --bg:#0b1220;
+      --text:#e6edf6;
+      --card: rgba(15, 23, 42, 0.56);
+      --muted:#9AA8BC;
+      --link:#cbd5e1;
+      --link-active:#fff;
+    }
+    /* =====================
+   Tipografia compacta (overrides)
+   Cole no final do seu <style>
+===================== */
+
+/* Base mais enxuta */
+body{
+  font-size: 15.5px;          /* antes: ~16–18px */
+  line-height: 1.55;
+}
+
+/* Parágrafos e textos auxiliares */
+p, .muted{
+  font-size: 0.98rem;         /* ~15px */
+}
+
+/* Navegação e botões mais discretos */
+.menu a{ font-size: .95rem; } /* ~14.8px */
+.btn{ font-size: .95rem; }
+
+/* Título do HERO (o grandão) – responsivo e menor */
+.hero h2{
+  font: 700 clamp(26px, 3.2vw + 6px, 42px) Poppins, Inter, sans-serif;
+  letter-spacing: -.2px;
+}
+
+/* Subtítulo do HERO */
+.hero p{
+  font-size: clamp(14px, 1.2vw + 8px, 17px);
+}
+
+/* Títulos de seção */
+.section-title{
+  font: 700 clamp(18px, 1.4vw + 8px, 24px) Poppins, Inter, sans-serif;
+}
+
+/* Títulos de cards */
+.card h3{
+  font-size: clamp(16px, 1.1vw + 6px, 18px);
+}
+
+/* Preço dos planos */
+.price{
+  font: 800 clamp(20px, 1.4vw + 6px, 24px) Poppins, Inter, sans-serif;
+}
+
+/* Depoimentos */
+.quote{ font-size: .98rem; }
+
+/* Rodapé/observações menores */
+footer, small{ font-size: .85rem; }
+
+/* Um pouco menos de respiro geral */
+section{ padding: 56px 0; }
+@media (max-width: 720px){
+  section{ padding: 44px 0; }
+  .hero .wrap{ padding: 72px 0 64px; }
+}
+
+    /* =====================
+       Base
+    ====================== */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:var(--bg)}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1200px, 92%); margin:0 auto}
+    :focus-visible{outline: none; box-shadow: var(--focus); border-radius: 8px}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+    /* =====================
+       Header/Nav
+    ====================== */
+    header{position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(15,23,42,.06)}
+    body.dark header{background:rgba(15,23,42,0.7)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; transition:padding .2s ease}
+    .nav.shrink{padding:6px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand-600)); display:grid; place-items:center; color:white; font-weight:700}
+    .brand h1{font:700 18px Poppins, Inter, sans-serif; letter-spacing:.3px; margin:0}
+    .menu{display:flex; align-items:center; gap:22px}
+    .menu a{font-weight:600; color:var(--link); opacity:.85; position:relative}
+    .menu a:hover{color:var(--brand-600); opacity:1}
+    .menu a[aria-current="true"]{color:var(--link-active); opacity:1}
+    .menu a[aria-current="true"]::after{
+      content:""; position:absolute; left:0; right:0; bottom:-8px; height:3px; border-radius:3px; background:var(--accent);
+    }
+    .cta{padding:10px 16px; background:var(--brand); color:#fff; border-radius:12px; box-shadow:var(--shadow-soft); font-weight:700}
+    .cta:hover{background:var(--brand-600)}
+    .hamb{display:none}
+    .controls{display:flex; align-items:center; gap:10px}
+    .toggle{border:1px solid rgba(100,116,139,.35); background:transparent; color:inherit; padding:8px 12px; border-radius:10px; cursor:pointer}
+
+    /* =====================
+       Hero
+    ====================== */
+    .hero{position:relative; overflow:hidden; background:
+      linear-gradient(135deg, rgba(10,37,64,0.92), rgba(27,75,122,0.88)),
+      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop');
+      background-size:cover; background-position:center; color:#fff}
+    .hero .wrap{padding:96px 0 88px; display:grid; gap:20px}
+    .hero h2{font:700 40px Poppins, Inter, sans-serif; margin:0 0 6px}
+    .hero p{font-size:18px; color:#e6edf6; max-width:760px}
+    .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px}
+    .btn{padding:12px 18px; border-radius:14px; font-weight:700; display:inline-flex; align-items:center; gap:10px}
+    .btn.primary{background:#fff; color:var(--brand)}
+    .btn.primary:hover{filter:brightness(.96)}
+    .btn.secondary{background:rgba(255,255,255,0.14); color:#fff; border:1px solid rgba(255,255,255,0.2)}
+    .btn.secondary:hover{background:rgba(255,255,255,0.22)}
+
+    /* =====================
+       Trust bar
+    ====================== */
+    .trust{background:#fff}
+    body.dark .trust{background:transparent}
+    .trust .row{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; padding:22px 0}
+    .trust .tag{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:999px; background:#f1f5f9; color:#0f172a; font-weight:700; justify-content:center}
+    body.dark .trust .tag{background:#0f172a; color:#e2e8f0}
+
+    /* =====================
+       Sections
+    ====================== */
+    section{padding:70px 0}
+    .section-title{font:700 28px Poppins, Inter, sans-serif; margin:0 0 10px; color:var(--brand)}
+    .section-sub{margin:0 0 28px; color:#334155}
+    body.dark .section-sub{color:#b6c2d4}
+
+    /* =====================
+       Cards & Grids
+    ====================== */
+    .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px}
+    .grid-4{display:grid; grid-template-columns:repeat(4, 1fr); gap:18px}
+    .card{background:var(--card); border:1px solid rgba(15,23,42,.06); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px; backdrop-filter: var(--blur)}
+    .card h3{margin:10px 0 6px}
+    .muted{color:var(--muted)}
+
+    /* Sobre */
+    .about{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px}
+    .list-check{display:grid; gap:10px}
+    .check{display:flex; gap:10px; align-items:flex-start}
+    .check svg{flex:0 0 20px}
+
+    /* Serviços */
+    .service-icon{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, #fff, #f5faff); border:1px solid #e5eef7}
+    .card ul{padding-left:18px}
+
+    /* Setores */
+    .pill{padding:10px 14px; background:#fff; border:1px solid #e6eef7; border-radius:999px; display:inline-block; margin:6px; font-weight:700; color:#334155}
+    body.dark .pill{background:#0f172a; color:#e2e8f0; border-color:#1e293b}
+
+    /* Planos */
+    .plans{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px}
+    .plan{position:relative}
+    .plan.popular{border:2px solid var(--accent)}
+    .price{font:800 28px Poppins, Inter, sans-serif; color:var(--brand)}
+    .plan .cta{display:block; text-align:center; margin-top:14px}
+
+    /* Depoimentos */
+    .testi{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+    .quote{font-style:italic; color:#0f223d}
+    body.dark .quote{color:#c7d2fe}
+    .carousel{position:relative; overflow:hidden}
+    .carousel-track{display:flex; gap:18px; transition:transform .5s ease}
+    .carousel-controls{display:flex; justify-content:center; gap:10px; margin-top:12px}
+    .dot{width:10px; height:10px; border-radius:50%; background:#cbd5e1; border:none; cursor:pointer}
+    .dot[aria-current="true"]{background:var(--accent)}
+
+    /* Blog */
+    .blog{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+    .post img{border-radius:12px}
+
+    /* CTA final */
+    .cta-final{background:linear-gradient(135deg, var(--brand), var(--brand-600)); color:#fff; border-radius:20px; padding:38px; display:grid; gap:10px}
+
+    /* Contato */
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; padding:12px 14px; border:1px solid #e2e8f0; border-radius:12px; background:#fff}
+    body.dark input, body.dark textarea{background:#0f172a; color:#e2e8f0; border-color:#1e293b}
+    label{font-weight:700; color:#0f223d}
+    body.dark label{color:#cbd5e1}
+    .map{border:0; width:100%; height:300px; border-radius:16px}
+    .toast{position:fixed; left:50%; transform:translateX(-50%); bottom:24px; background:#0f172a; color:#fff; padding:10px 14px; border-radius:10px; box-shadow:var(--shadow); opacity:0; pointer-events:none; transition:opacity .3s ease}
+    .toast.show{opacity:1}
+
+    /* Footer */
+    footer{background:#0b1526; color:#cbd5e1; padding:36px 0}
+    footer a{color:#e2e8f0}
+
+    
+    /* Animations */
+    [data-reveal]{opacity:0; transform:translateY(18px); transition: all .5s ease}
+    [data-reveal].visible{opacity:1; transform:none}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid-3, .plans, .testi, .blog{grid-template-columns:1fr 1fr}
+      .about{grid-template-columns:1fr}
+      .trust .row{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 720px){
+      .grid-3, .grid-4, .plans, .testi, .blog{grid-template-columns:1fr}
+      .hero h2{font-size:32px}
+      .menu{display:none}
+      .hamb{display:inline-flex; gap:8px; align-items:center; border:1px solid #e2e8f0; padding:8px 12px; border-radius:10px}
+      .menu.open{display:flex; position:absolute; left:0; right:0; top:64px; flex-direction:column; gap:14px; background:#fff; padding:12px 5%; border-bottom:1px solid #e2e8f0}
+      body.dark .menu.open{background:#0b1220; border-color:#1e293b}
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#inicio">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav" id="navbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">062</div>
+        <h1 aria-label="062 Contabilidade — página inicial">062 Contabilidade</h1>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+        <a href="#inicio" data-spy>Início</a>
+        <a href="#sobre" data-spy>Sobre</a>
+        <a href="#servicos" data-spy>Serviços</a>
+        <a href="#setores" data-spy>Setores</a>
+        <a href="#planos" data-spy>Planos</a>
+        <a href="#depoimentos" data-spy>Depoimentos</a>
+        <a href="#blog" data-spy>Blog</a>
+        <a href="#contato" data-spy>Contato</a>
+      </nav>
+      <div class="controls">
+        <button class="toggle" id="themeToggle" aria-pressed="false" aria-label="Alternar modo claro/escuro">🌙</button>
+        <button class="hamb" id="hamb" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰ Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container wrap">
+        <h2 id="hero-title" data-reveal>Contabilidade estratégica para fazer sua empresa crescer com segurança.</h2>
+        <p data-reveal>Assessoria completa em rotinas fiscal, contábil, trabalhista e planejamento tributário. Atendemos MEI, ME e EPP com foco em resultados e transparência.</p>
+        <p> Atendemos em todo o Brasil por meio do serviço digital.</p>
+        <div class="hero-ctas" data-reveal>
+          <a class="btn primary" href="https://wa.me/5562994067881" target="_blank" rel="noopener" aria-label="Fale no WhatsApp agora">💬 Fale no WhatsApp</a>
+          <a class="btn secondary" href="#servicos">Conheça nossos serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust" aria-label="Provas de confiança">
+      <div class="container row">
+        <div class="tag">★★★★★ Avaliação Google</div>
+        <div class="tag">+7 anos de experiência</div>
+        <div class="tag">LGPD • Sigilo & Ética</div>
+        <div class="tag">Atendimento: Goiânia e em todo o Brasil</div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" aria-labelledby="sobre-title">
+      <div class="container about">
+        <div>
+          <h3 class="section-title" id="sobre-title" data-reveal>Sobre a 062 Contabilidade</h3>
+          <p class="section-sub" data-reveal>Somos uma contabilidade consultiva liderada por <strong>Ubiratan Pimentel</strong> (Contador), dedicada a simplificar sua gestão e impulsionar o crescimento do seu negócio.</p>
+
+          <div class="grid-3" role="list">
+            <div class="card" data-reveal role="listitem">
+              <h3>Missão</h3>
+              <p class="muted">Oferecer serviços contábeis com excelência, transparência e foco em resultados para clientes de todos os portes.</p>
+            </div>
+            <div class="card" data-reveal role="listitem">
+              <h3>Visão</h3>
+              <p class="muted">Ser referência em contabilidade consultiva e estratégica para pequenas e médias empresas.</p>
+            </div>
+            <div class="card" data-reveal role="listitem">
+              <h3>Valores</h3>
+              <p class="muted">Ética, compromisso, inovação, confiabilidade, respeito e sigilo.</p>
+            </div>
+          </div>
+
+          <div class="list-check" style="margin-top:16px">
+            <div class="check" data-reveal>
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Atendimento consultivo próximo e orientado a metas.</span>
+            </div>
+            <div class="check" data-reveal>
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Indicadores e relatórios para tomada de decisão.</span>
+            </div>
+            <div class="check" data-reveal>
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Processos sob conformidade e respeito à LGPD.</span>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <h3>Ubiratan Pimentel — Contador</h3>
+          <p class="muted">Responsável técnico. <em>CRC:</em> <span title="Insira o CRC aqui">(026299/CRC GO)</span></p>
+          <p>Apaixonado por finanças, processos e crescimento sustentável. Há mais de 7 anos apoiando MEIs e PMEs em Goiânia e região.</p>
+          <p> <img src="C:\Users\Jefferson  Alves\OneDrive\Concursos\ADS\Praticasprogramacao\site062contabilidade\Imagem do WhatsApp de 2025-08-10 à(s) 13.39.44_59f33a9b.jpg" alt="" width="220"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+        <h3 class="section-title" id="servicos-title" data-reveal>Serviços</h3>
+        <p class="section-sub" data-reveal>Menos burocracia, mais crescimento. Soluções completas para cada etapa do seu negócio.</p>
+        <div class="grid-3" role="list">
+          <div class="card" data-reveal role="listitem">
+            <div class="service-icon" aria-hidden="true">📄</div>
+            <h3>Abertura & Regularização</h3>
+            <p class="muted">MEI, ME, EPP. Contrato social, CNPJ, inscrições e enquadramento correto.</p>
+          </div>
+          <div class="card" data-reveal role="listitem">
+            <div class="service-icon" aria-hidden="true">📊</div>
+            <h3>Contábil & Demonstrações</h3>
+            <p class="muted">Escrituração, balancetes, Balanço, DRE, ECD/ECF e relatórios gerenciais.</p>
+          </div>
+          <div class="card" data-reveal role="listitem">
+            <div class="service-icon" aria-hidden="true">🧾</div>
+            <h3>Fiscal & Tributário</h3>
+            <p class="muted">Apuração de impostos no Simples, Presumido e Real, com compliance e eficiência.</p>
+          </div>
+          <div class="card" data-reveal role="listitem">
+            <div class="service-icon" aria-hidden="true">👥</div>
+            <h3>Folha & DP</h3>
+            <p class="muted">Admissões, eSocial, férias, 13º, rescisões e suporte ao RH.</p>
+          </div>
+          <div class="card" data-reveal role="listitem">
+            <div class="service-icon" aria-hidden="true">🧭</div>
+            <h3>Planejamento Tributário</h3>
+            <p class="muted">Estratégias lícitas para pagar menos impostos, com segurança.</p>
+          </div>
+          <div class="card" data-reveal role="listitem">
+            <div class="service-icon" aria-hidden="true">💡</div>
+            <h3>Consultoria MEI</h3>
+            <p class="muted">Formalização, emissão de notas, DAS e orientação para evoluir ao próximo regime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETORES -->
+    <section id="setores" aria-labelledby="setores-title">
+      <div class="container">
+        <h3 class="section-title" id="setores-title" data-reveal>Setores atendidos</h3>
+        <p class="section-sub" data-reveal>Entendemos as particularidades de cada segmento.</p>
+        <div data-reveal aria-label="Lista de setores">
+          <span class="pill">Comércio</span>
+          <span class="pill">Serviços</span>
+          <span class="pill">Indústria</span>
+          <span class="pill">Construção</span>
+          <span class="pill">Micro Empreendedor Individual</span>
+          <span class="pill">Saúde</span>
+          <span class="pill">TI</span>
+          <span class="pill">Alimentação</span>
+          <span class="pill">Beleza</span>
+          <span class="pill">Logística</span>
+          <span class="pill">Imobiliário</span>
+          <span class="pill">Educação</span>
+          <span class="pill">DECORE</span>
+          <span class="pill">Declaração de IRPF</span>
+          <span class="pill">Atendimento digital para todo o Brasil</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" aria-labelledby="planos-title">
+      <div class="container">
+        <h3 class="section-title" id="planos-title" data-reveal>Planos & Pacotes</h3>
+        <p class="section-sub" data-reveal>Planos que acompanham o seu momento de negócio. Valores sob consulta.</p>
+
+        <div class="plans" role="tablist" aria-label="Planos de serviço">
+          <article class="card plan" data-reveal role="tabpanel" aria-labelledby="pl-essencial">
+            <h3 id="pl-essencial">Essencial</h3>
+            <p class="muted">Para MEI/ME iniciante</p>
+            <p class="price">A partir de R$ 99,00/mês</p>
+            <ul class="muted">
+              <li>Escrituração básica</li>
+              <li>Guias mensais (ex.: DAS)</li>
+              <li>Suporte via WhatsApp</li>
+              <li>Obrigações essenciais</li>
+            </ul>
+            <a class="cta" href="https://wa.me/5562994067881?text=Quero%20saber%20mais%20sobre%20o%20Plano%20Essencial" target="_blank" rel="noopener">Solicitar proposta</a>
+          </article>
+
+          <article class="card plan popular:focus" data-reveal role="tabpanel" aria-labelledby="pl-prof">
+            <h3 id="pl-prof">Profissional</h3>
+            <p class="muted">Para ME/EPP</p>
+            <p class="price">A partir de R$ 279,00/mês</p>
+            <ul class="muted">
+              <li>Fiscal + DP até 2 funcionários</li>
+              <li>Relatórios mensais</li>
+              <li>Consultoria trimestral</li>
+              <li>Atendimento prioritário</li>
+            </ul>
+            <a class="cta" href="https://wa.me/5562994067881?text=Quero%20saber%20mais%20sobre%20o%20Plano%20Profissional" target="_blank" rel="noopener">Solicitar proposta</a>
+          </article>
+
+          <article class="card plan" data-reveal role="tabpanel" aria-labelledby="pl-estrat">
+            <h3 id="pl-estrat">Estratégico</h3>
+            <p class="muted">Para PME em expansão</p>
+            <p class="price">A partir de R$ 459,00/mês</p>
+            <ul class="muted">
+              <li>Fiscal + DP ampliado</li>
+              <li>Relatórios gerenciais</li>
+              <li>Planejamento tributário</li>
+              <li>Acompanhamento com o contador</li>
+            </ul>
+            <a class="cta" href="https://wa.me/5562994067881?text=Quero%20uma%20proposta%20do%20Plano%20Estrat%C3%A9gico" target="_blank" rel="noopener">Solicitar proposta</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS (CAROUSEL) -->
+    <section id="depoimentos" aria-labelledby="depo-title">
+      <div class="container">
+        <h3 class="section-title" id="depo-title" data-reveal>O que dizem nossos clientes</h3>
+        <p class="section-sub" data-reveal>Proximidade, agilidade e visão estratégica no dia a dia.</p>
+
+        <div class="carousel" aria-roledescription="carousel" aria-label="Depoimentos de clientes">
+          <div class="carousel-track" id="ttrack">
+            <div class="card" style="min-width: 320px" role="group" aria-roledescription="slide" aria-label="1 de 5">
+              <p class="quote">“Profissionais extremamente atenciosos e comprometidos. Sempre que preciso, o retorno é rápido e assertivo.”</p>
+              <p><strong>Bruna Martins</strong> <span class="muted">• Comércio Varejista — Senador Canedo/GO</span></p>
+            </div>
+            <div class="card" style="min-width: 320px" role="group" aria-roledescription="slide" aria-label="2 de 5">
+              <p class="quote">“Com a 062 Contabilidade, minha empresa está regularizada e pagando menos impostos dentro da lei. Atendimento impecável!”</p>
+              <p><strong>Carlos Eduardo</strong> <span class="muted">• Serviços — Goiânia/GO</span></p>
+            </div>
+            <div class="card" style="min-width: 320px" role="group" aria-roledescription="slide" aria-label="3 de 5">
+              <p class="quote">“O contador Ubiratan me orientou em todas as etapas para abrir minha empresa. Hoje tenho mais segurança e clareza nas finanças.”</p>
+              <p><strong>Juliana Ferreira</strong> <span class="muted">• Beleza — Aparecida de Goiânia/GO</span></p>
+            </div>
+            <div class="card" style="min-width: 320px" role="group" aria-roledescription="slide" aria-label="4 de 5">
+              <p class="quote">“Contabilidade com visão estratégica e proximidade. Recomendo para qualquer empresário que queira crescer com segurança.”</p>
+              <p><strong>Rafael Souza</strong> <span class="muted">• Restaurante — Senador Canedo/GO</span></p>
+            </div>
+            <div class="card" style="min-width: 320px" role="group" aria-roledescription="slide" aria-label="5 de 5">
+              <p class="quote">“Achei que contabilidade era só para pagar imposto, mas aqui encontrei planejamento e acompanhamento de verdade.”</p>
+              <p><strong>Vanessa Oliveira</strong> <span class="muted">• E-commerce — Goiânia/GO</span></p>
+            </div>
+          </div>
+          <div class="carousel-controls" id="dots" role="tablist" aria-label="Navegação do carrossel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" aria-labelledby="blog-title">
+      <div class="container">
+        <h3 class="section-title" id="blog-title" data-reveal>Conteúdos & Dicas</h3>
+        <p class="section-sub" data-reveal>Aprenda com nossos materiais sobre rotinas, regimes e boas práticas.</p>
+        <div class="blog">
+          <article class="card post" data-reveal>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="Pessoa analisando relatórios e notas fiscais"/>
+            <h3>MEI: quando migrar para ME?</h3>
+            <p class="muted">Os sinais de que é hora de mudar de porte e como se preparar.</p>
+          </article>
+          <article class="card post" data-reveal>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Gráfico comparando regimes tributários"/>
+            <h3>Simples, Presumido ou Real?</h3>
+            <p class="muted">Como escolher o melhor regime tributário para a sua empresa.</p>
+          </article>
+          <article class="card post" data-reveal>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1664575262619-b28fef7a40a4?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Checklist de documentos empresariais"/>
+            <h3>Checklist de documentos mensais</h3>
+            <p class="muted">Organização para não perder prazos e manter a saúde fiscal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section aria-labelledby="cta-final-title">
+      <div class="container">
+        <div class="cta-final" data-reveal>
+          <h3 class="section-title" id="cta-final-title" style="color:#fff">Pronto para simplificar sua contabilidade?</h3>
+          <p style="margin:0 0 6px; color:#e6edf6">Fale agora e receba uma análise gratuita do seu enquadramento tributário.</p>
+          <div>
+            <a class="btn primary" href="https://wa.me/5562994067881" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <h3 class="section-title" id="contato-title" data-reveal>Contato</h3>
+        <p class="section-sub" data-reveal>Preencha o formulário ou chame direto no WhatsApp. Responderemos o quanto antes.</p>
+        <div class="grid-3">
+          <div class="card" data-reveal>
+            <form id="leadForm" novalidate>
+              <div>
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" placeholder="Seu nome" required />
+              </div>
+              <div>
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="voce@empresa.com" required />
+              </div>
+              <div>
+                <label for="tel">Telefone (opcional)</label>
+                <input id="tel" name="tel" inputmode="tel" placeholder="(62) 9 9999-9999" />
+              </div>
+              <div>
+                <label for="msg">Mensagem</label>
+                <textarea id="msg" name="msg" rows="4" placeholder="Conte rapidamente sua necessidade"></textarea>
+              </div>
+              <label style="display:flex; gap:8px; align-items:flex-start; font-weight:600">
+                <input type="checkbox" id="lgpd" required aria-label="Concordo com o uso dos dados para retorno"/> Concordo com o uso dos meus dados para retorno do contato (LGPD).
+              </label>
+              <button class="cta" type="submit">Enviar</button>
+              <p class="muted" style="margin:8px 0 0">Ao enviar, você será redirecionado ao WhatsApp com sua mensagem preenchida.</p>
+            </form>
+          </div>
+          <div class="card" data-reveal>
+            <h3>Horário de Atendimento</h3>
+            <p class="muted">De segunda a sexta-feira. Horário de Atendimento das 9h às 18h.</p>
+            <p><a class="btn secondary" href="https://wa.me/5562994067881" target="_blank" rel="noopener"> Falar com o contador</a></p>
+            <h3 style="margin-top:16px">Endereço</h3>
+            <p class="muted">Rua Ps 17, N 207, Porto Seguro, Sen. Canedo - GO, 75258-560<br/>Atendimento em todo o Brasil.</p>
+          </div>
+          <div class="card" data-reveal>
+            <iframe class="map" loading="lazy" allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4545.381711596974!2d-49.12842419524918!3d-16.667113277895396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935eef00042c297b%3A0xf0d4c4afdf1afc94!2s062%20CONTABILIDADE!5e0!3m2!1spt-BR!2sbr!4v1754842574861!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="RUA PS 17, N 207 - PORTO SEGURO, Sen. Canedo - GO, 75258-560">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="display:grid; gap:12px">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+        <div class="logo" aria-hidden="true">062</div>
+        <strong>062 Contabilidade</strong>
+        <span class="muted">• Senador Canedo — GO</span>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#planos">Planos</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+        <a href="https://wa.me/5562994067881" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <small id="copyright">© <span id="year"></span> 062 Contabilidade. Todos os direitos reservados.</small>
+      <small><a href="#" aria-label="Política de Privacidade">Política de Privacidade</a> • <a href="#" aria-label="Termos de Uso">Termos de Uso</a></small>
+    </div>
+  </footer>
+
+  <!-- FAB -->
+  <div class="fab" role="group" aria-label="Ações rápidas">
+    <a class="wpp" href="https://wa.me/5562994067881" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">✆</a>
+    <button class="top" id="backTop" aria-label="Voltar ao topo">↑</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- JSON-LD: Organization & LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "062 Contabilidade",
+    "image": "",
+    "address": {"@type":"PostalAddress","addressLocality":"Senador Canedo","addressRegion":"GO","addressCountry":"BR"},
+    "areaServed": ["Senador Canedo","Goiânia","Região Metropolitana de Goiânia"],
+    "url": "",
+    "telephone": "",
+    "contactPoint": [{"@type":"ContactPoint","contactType":"customer support","telephone":"+55-62-99406-7881","areaServed":"BR"}]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Sou MEI: preciso de contador?","acceptedAnswer":{"@type":"Answer","text":"Não é obrigatório em todos os casos, mas o apoio contábil evita multas, melhora o planejamento tributário e libera seu tempo para o negócio."}},
+      {"@type":"Question","name":"Qual o melhor regime tributário para minha empresa?","acceptedAnswer":{"@type":"Answer","text":"Depende do faturamento, margem, atividade e folha. Avaliamos Simples, Presumido e Real para escolher o mais vantajoso com segurança."}},
+      {"@type":"Question","name":"Quanto tempo leva para abrir CNPJ?","acceptedAnswer":{"@type":"Answer","text":"Variável por município e órgão, mas em média de 3 a 10 dias úteis quando a documentação está correta."}},
+      {"@type":"Question","name":"Quais documentos preciso enviar mensalmente?","acceptedAnswer":{"@type":"Answer","text":"Notas fiscais de entrada e saída, extratos, folhas de pagamento e movimentações relevantes. Enviamos um checklist personalizado."}},
+      {"@type":"Question","name":"Vocês atendem empresas de fora de Senador Canedo?","acceptedAnswer":{"@type":"Answer","text":"Sim. Atendemos remotamente clientes em toda a região metropolitana de Goiânia e, quando necessário, realizamos atendimentos presenciais."}},
+      {"@type":"Question","name":"Como funcionam os honorários mensais?","acceptedAnswer":{"@type":"Answer","text":"Definimos conforme porte, atividade e complexidade. Apresentamos proposta transparente e sem letras miúdas."}}
+    ]
+  }
+  </script>
+
+  <script>
+    // ========================
+    // Utilidades & Seletores
+    // ========================
+    const $ = (s, p=document) => p.querySelector(s);
+    const $$ = (s, p=document) => Array.from(p.querySelectorAll(s));
+
+    // ========================
+    // Menu mobile toggle
+    // ========================
+    const hamb = $('#hamb');
+    const menu = $('#menu');
+    hamb?.addEventListener('click', ()=>{
+      const open = menu.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', String(open));
+    });
+    // Fecha menu ao clicar em link
+    $$('#menu a').forEach(a=>a.addEventListener('click', ()=> menu.classList.remove('open')));
+
+    // ========================
+    // Header shrink on scroll
+    // ========================
+    const navbar = $('#navbar');
+    window.addEventListener('scroll', ()=> navbar.classList.toggle('shrink', window.scrollY > 10), {passive:true});
+
+    // ========================
+    // Scroll reveal (respeita reduce motion)
+    // ========================
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+      }, {threshold: .12});
+      $$('[data-reveal]').forEach(el=>obs.observe(el));
+    } else {
+      $$('[data-reveal]').forEach(el=> el.classList.add('visible'));
+    }
+
+    // ========================
+    // Back to top
+    // ========================
+    $('#backTop').addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+    // ========================
+    // Ano no rodapé
+    // ========================
+    $('#year').textContent = new Date().getFullYear();
+
+    // ========================
+    // Theme toggle (persistente)
+    // ========================
+    const themeToggle = $('#themeToggle');
+    const applyTheme = (t)=> document.body.classList.toggle('dark', t === 'dark');
+    const storedTheme = localStorage.getItem('062-theme');
+    if (storedTheme) {
+      applyTheme(storedTheme);
+      themeToggle.textContent = storedTheme === 'dark' ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-pressed', String(storedTheme === 'dark'));
+    }
+    themeToggle.addEventListener('click', ()=>{
+      const now = document.body.classList.toggle('dark');
+      const mode = now ? 'dark' : 'light';
+      localStorage.setItem('062-theme', mode);
+      themeToggle.setAttribute('aria-pressed', String(now));
+      themeToggle.textContent = now ? '☀️' : '🌙';
+    });
+
+    // ========================
+    // Form - validação & envio para WhatsApp
+    // ========================
+    const form = $('#leadForm');
+    const toast = $('#toast');
+    const showToast = (msg)=>{ toast.textContent = msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 2400); };
+
+    const buildMessage = () => {
+      const nome = $('#nome').value.trim();
+      const email = $('#email').value.trim();
+      const tel = $('#tel').value.trim();
+      const msg = $('#msg').value.trim();
+      return `Olá! Tenho interesse nos serviços de contabilidade.%0A%0A`+
+             `Nome: ${encodeURIComponent(nome)}%0A`+
+             `E-mail: ${encodeURIComponent(email)}%0A`+
+             (tel?`Telefone: ${encodeURIComponent(tel)}%0A`:``)+
+             (msg?`Mensagem: ${encodeURIComponent(msg)}%0A`:``);
+    };
+
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      if (!$('#nome').value.trim() || !$('#email').validity.valid || !$('#lgpd').checked){
+        showToast('Verifique os campos obrigatórios.');
+        return;
+      }
+      const url = `https://wa.me/5562994067881?text=${buildMessage()}`;
+      window.open(url, '_blank');
+      showToast('Abrindo WhatsApp…');
+    });
+
+    // ========================
+    // Carrossel Depoimentos
+    // ========================
+    const track = $('#ttrack');
+    const dotsWrap = $('#dots');
+    let index = 0;
+
+    const slides = $$('.carousel .card', track);
+    const slideW = () => slides[0]?.offsetWidth + 18 || 338; // card width + gap
+
+    const makeDots = ()=>{
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, i)=>{
+        const b = document.createElement('button');
+        b.className = 'dot';
+        b.type = 'button';
+        b.setAttribute('aria-label', `Ir para o slide ${i+1}`);
+        b.setAttribute('aria-controls', 'ttrack');
+        b.addEventListener('click', ()=> goTo(i));
+        dotsWrap.appendChild(b);
+      });
+    };
+
+    const updateDots = ()=>{
+      $$('.dot', dotsWrap).forEach((d,i)=> d.setAttribute('aria-current', i===index ? 'true' : 'false'));
+    };
+
+    const goTo = (i)=>{
+      index = (i + slides.length) % slides.length;
+      const x = -index * slideW();
+      track.style.transform = `translateX(${x}px)`;
+      updateDots();
+    };
+
+    const autoplay = ()=>{
+      if (document.hidden) return; // pausa quando aba não está visível
+      goTo(index + 1);
+    };
+
+    const initCarousel = ()=>{
+      makeDots();
+      goTo(0);
+      let timer = setInterval(autoplay, 4000);
+      track.addEventListener('mouseenter', ()=> clearInterval(timer));
+      track.addEventListener('mouseleave', ()=> timer = setInterval(autoplay, 4000));
+      window.addEventListener('resize', ()=> goTo(index));
+    };
+    if (track) initCarousel();
+
+    // ========================
+    // Scroll-Spy (destaca seção ativa no menu)
+    // ========================
+    const spyLinks = $$('a[data-spy]');
+    const sections = spyLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    const clearSpy = ()=> spyLinks.forEach(a=> a.removeAttribute('aria-current'));
+    const setSpy = (id)=> {
+      clearSpy();
+      const link = spyLinks.find(a => a.getAttribute('href') === `#${id}`);
+      if (link) link.setAttribute('aria-current','true');
+    };
+
+    const spyObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if (entry.isIntersecting){
+          setSpy(entry.target.id);
+        }
+      });
+    }, {rootMargin: "-40% 0px -55% 0px", threshold: 0});
+    sections.forEach(sec => spyObserver.observe(sec));
+  </script>
+</body>
+<!-- ===== CHATBOT 062 (auto aberto) ===== -->
+<style>
+  :root{
+    --cb-brand:#0A2540;  /* azul 062 */
+    --cb-accent:#49A6E9; /* acento */
+    --cb-bg:#fff;
+    --cb-text:#0f172a;
+  }
+  .cb-fab{
+    position:fixed; right:18px; bottom:18px; z-index:9999;
+    width:64px; height:64px; border-radius:50%; border:0; cursor:pointer;
+    box-shadow:0 10px 20px rgba(0,0,0,.2); background:#fff; padding:0;
+    display:grid; place-items:center; transition:transform .2s ease;
+  }
+  .cb-fab svg{ width:44px; height:44px; }
+  .cb-fab:hover{ transform:translateY(-1px); }
+  .cb-fab.attn{ animation: cb-pulse 1.2s ease-in-out 3; }
+  @keyframes cb-pulse{
+    0%,100%{ transform:scale(1) }
+    50%{ transform:scale(1.06) }
+  }
+
+  .cb-box{
+    position:fixed; right:18px; bottom:90px; z-index:9999;
+    width:340px; max-width:92vw; background:var(--cb-bg); color:var(--cb-text);
+    border:1px solid #e2e8f0; border-radius:16px; box-shadow:0 18px 40px rgba(2,14,34,.16);
+    overflow:hidden; display:none; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  .cb-box.show{ animation: cb-pop .35s ease; }
+  @keyframes cb-pop{
+    0%{ transform:scale(.92); opacity:0 }
+    100%{ transform:scale(1); opacity:1 }
+  }
+
+  .cb-head{
+    background:linear-gradient(135deg,var(--cb-brand),#1B4B7A); color:#fff; padding:12px 14px;
+    display:flex; align-items:center; justify-content:space-between
+  }
+  .cb-title{display:grid}
+  .cb-title strong{font-weight:700; line-height:1.1}
+  .cb-sub{opacity:.85; font-size:12px}
+  .cb-close{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+  .cb-body{padding:12px; max-height:380px; overflow:auto; display:grid; gap:10px}
+  .cb-msg{padding:10px 12px; border-radius:12px; max-width:88%; line-height:1.35; font-size:14px}
+  .cb-bot{background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0}
+  .cb-user{background:#e8f4ff; color:#0f172a; justify-self:end; border:1px solid #cfe8ff}
+  .cb-ops{display:flex; flex-wrap:wrap; gap:8px}
+  .cb-ops button{
+    padding:8px 10px; border:1px solid #e2e8f0; background:#fff; border-radius:999px; cursor:pointer; font-weight:600; font-size:13px;
+  }
+  .cb-foot{padding:10px; border-top:1px solid #e2e8f0; display:grid; gap:8px}
+  .cb-field{display:grid; gap:6px}
+  .cb-field input{
+    width:100%; padding:10px 12px; border:1px solid #e2e8f0; border-radius:10px; font-size:14px;
+  }
+  .cb-actions{display:flex; gap:8px; justify-content:flex-end}
+  .cb-btn{padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:700}
+  .cb-btn.primary{background:var(--cb-brand); color:#fff}
+  .cb-btn.secondary{background:#f1f5f9}
+  .cb-consent{display:flex; gap:8px; align-items:flex-start; font-size:12px; color:#334155}
+  @media (max-width:420px){ .cb-box{right:10px; left:10px; width:auto} }
+</style>
+
+<!-- Botão flutuante (mascotinho de óculos) -->
+<button class="cb-fab" id="cbOpen" aria-label="Abrir atendimento" title="Falar com atendimento">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <circle cx="32" cy="32" r="30" fill="#e8f0fe" stroke="#1B4B7A"/>
+    <circle cx="24" cy="28" r="7" fill="#fff" stroke="#0A2540"/>
+    <circle cx="40" cy="28" r="7" fill="#fff" stroke="#0A2540"/>
+    <rect x="24" y="27" width="16" height="2" fill="#0A2540"/>
+    <circle cx="24" cy="28" r="3" fill="#0A2540"/>
+    <circle cx="40" cy="28" r="3" fill="#0A2540"/>
+    <path d="M22 42c3 3 17 3 20 0" stroke="#0A2540" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M18 20c6-7 22-7 28 0" stroke="#1B4B7A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<div class="cb-box" id="cbBox" role="dialog" aria-labelledby="cbTitle" aria-modal="true">
+  <div class="cb-head">
+    <div class="cb-title">
+      <strong id="cbTitle">Atendimento 062</strong>
+      <span class="cb-sub">Olá! Posso ajudar?</span>
+    </div>
+    <button class="cb-close" id="cbClose" aria-label="Fechar">×</button>
+  </div>
+  <div class="cb-body" id="cbBody" tabindex="0"></div>
+  <div class="cb-foot" id="cbFoot"></div>
+</div>
+
+<script>
+(() => {
+  // ===== CONFIG =====
+  const WHATSAPP_NUMBER = "5562994067881"; // +55 62 99406-7881
+  const SERVICOS = [
+    "Abertura & Regularização",
+    "Contábil & Demonstrações",
+    "Fiscal & Tributário",
+    "Folha & DP",
+    "Planejamento Tributário",
+    "Consultoria MEI"
+  ];
+  // ===== FIM CONFIG =====
+
+  const $ = (s, p=document)=>p.querySelector(s);
+  const openBtn = $('#cbOpen');
+  const box = $('#cbBox');
+  const closeBtn = $('#cbClose');
+  const body = $('#cbBody');
+  const foot = $('#cbFoot');
+
+  const state = { servico:"", nome:"", email:"", telefone:"", cidade:"" };
+
+  // som de “plim” (sem arquivo externo)
+  function playPing(){
+    try{
+      const ctx = new (window.AudioContext||window.webkitAudioContext)();
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.type = "sine"; o.frequency.value = 880; // A5
+      o.connect(g); g.connect(ctx.destination);
+      g.gain.setValueAtTime(0.0001, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.18);
+      o.start(); o.stop(ctx.currentTime + 0.2);
+    }catch(e){}
+  }
+
+  const addBot = (html) => { const n=document.createElement('div'); n.className='cb-msg cb-bot'; n.innerHTML=html; body.appendChild(n); body.scrollTop=body.scrollHeight; };
+  const addUser = (text)=> { const n=document.createElement('div'); n.className='cb-msg cb-user'; n.textContent=text; body.appendChild(n); body.scrollTop=body.scrollHeight; };
+  const clearFoot = ()=> foot.innerHTML='';
+
+  function stepServicos(greeting=true){
+    if (greeting){
+      addBot("Olá, tudo bem? 👋<br><b>Como posso ajudar?</b><br><small>Clique em um serviço abaixo para começar:</small>");
+    } else {
+      addBot("<small>Selecione um serviço:</small>");
+    }
+    const ops = document.createElement('div'); ops.className='cb-ops';
+    SERVICOS.forEach(s=>{
+      const b=document.createElement('button'); b.textContent=s;
+      b.onclick=()=>{ state.servico=s; addUser(s); stepNome(); };
+      ops.appendChild(b);
+    });
+    body.appendChild(ops); body.scrollTop=body.scrollHeight;
+  }
+
+  function stepNome(){
+    clearFoot(); addBot("Qual é o seu <b>nome completo</b>?");
+    const wrap=document.createElement('div'); wrap.className='cb-field';
+    wrap.innerHTML = `
+      <input id="cbNome" placeholder="Seu nome completo" />
+      <div class="cb-actions">
+        <button class="cb-btn secondary" id="back0">Voltar</button>
+        <button class="cb-btn primary" id="next0">Continuar</button>
+      </div>`;
+    foot.appendChild(wrap);
+    $('#cbNome').focus();
+    $('#back0').onclick=()=>{ body.innerHTML=''; stepServicos(false); };
+    $('#next0').onclick=()=>{ const v=$('#cbNome').value.trim(); if(v.length<3){$('#cbNome').focus(); return;} state.nome=v; addUser(v); stepEmail(); };
+  }
+
+  function stepEmail(){
+    clearFoot(); addBot("Obrigado! Informe seu <b>e‑mail</b>.");
+    const wrap=document.createElement('div'); wrap.className='cb-field';
+    wrap.innerHTML = `
+      <input id="cbEmail" type="email" placeholder="voce@empresa.com" />
+      <div class="cb-actions">
+        <button class="cb-btn secondary" id="back1">Voltar</button>
+        <button class="cb-btn primary" id="next1">Continuar</button>
+      </div>`;
+    foot.appendChild(wrap);
+    $('#cbEmail').focus();
+    $('#back1').onclick=()=> stepNome();
+    $('#next1').onclick=()=>{
+      const v=$('#cbEmail').value.trim();
+      const ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+      if(!ok){ $('#cbEmail').focus(); return; }
+      state.email=v; addUser(v); stepTelefone();
+    };
+  }
+
+  function stepTelefone(){
+    clearFoot(); addBot("Qual é o seu <b>telefone (WhatsApp)</b>?");
+    const wrap=document.createElement('div'); wrap.className='cb-field';
+    wrap.innerHTML = `
+      <input id="cbTel" inputmode="tel" placeholder="(62) 9 9999-9999" />
+      <div class="cb-actions">
+        <button class="cb-btn secondary" id="back2">Voltar</button>
+        <button class="cb-btn primary" id="next2">Continuar</button>
+      </div>`;
+    foot.appendChild(wrap);
+    $('#cbTel').focus();
+    $('#back2').onclick=()=> stepEmail();
+    $('#next2').onclick=()=>{
+      const v=$('#cbTel').value.trim();
+      if(v.length<8){ $('#cbTel').focus(); return; }
+      state.telefone=v; addUser(v); stepCidade();
+    };
+  }
+
+  function stepCidade(){
+    clearFoot(); addBot("De qual <b>cidade/região</b> você é?");
+    const wrap=document.createElement('div'); wrap.className='cb-field';
+    wrap.innerHTML = `
+      <input id="cbCidade" placeholder="Ex.: Senador Canedo / Goiânia" />
+      <label class="cb-consent"><input type="checkbox" id="cbLGPD"> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+      <div class="cb-actions">
+        <button class="cb-btn secondary" id="back3">Voltar</button>
+        <button class="cb-btn primary" id="send">Enviar pelo WhatsApp</button>
+      </div>`;
+    foot.appendChild(wrap);
+    $('#cbCidade').focus();
+    $('#back3').onclick=()=> stepTelefone();
+    $('#send').onclick=()=>{
+      const v=$('#cbCidade').value.trim();
+      if(!v){ $('#cbCidade').focus(); return; }
+      if(!$('#cbLGPD').checked){ alert('Marque o consentimento LGPD para prosseguir.'); return; }
+      state.cidade=v; addUser(v); sendWhatsApp();
+    };
+  }
+
+  function sendWhatsApp(){
+    const msg =
+`Olá! Tenho interesse em: ${state.servico}.
+Nome: ${state.nome}
+E-mail: ${state.email}
+Telefone: ${state.telefone}
+Cidade/Região: ${state.cidade}
+
+(Enviado pelo chatbot do site)`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    addBot("Perfeito! Vou abrir o WhatsApp com suas informações. ✅");
+    window.open(url,'_blank');
+  }
+
+  function resetChat(){
+    body.innerHTML=''; foot.innerHTML='';
+    stepServicos(true);
+  }
+
+  // abrir/fechar manual
+  openBtn.addEventListener('click', ()=>{
+    box.style.display='block';
+    box.classList.add('show');
+    if(!body.children.length) resetChat();
+    setTimeout(()=> body.focus(), 80);
+  });
+  closeBtn.addEventListener('click', ()=> { box.style.display='none'; openBtn.classList.add('attn'); });
+
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && box.style.display==='block') box.style.display='none'; });
+
+  // ===== ABERTURA AUTOMÁTICA =====
+  window.addEventListener('load', ()=>{
+    // atenção no botão antes de abrir
+    openBtn.classList.add('attn');
+    setTimeout(()=>{
+      openBtn.classList.remove('attn');
+      box.style.display='block';
+      box.classList.add('show');
+      resetChat();
+      playPing(); // som
+    }, 1200); // abre ~1.2s após carregar
+  });
+})();
+</script>
+<!-- ===== /CHATBOT 062 ===== -->
+</html>
